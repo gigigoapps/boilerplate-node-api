@@ -11,6 +11,9 @@ const debug = require('debug')('app:root');
 debug('init');
 const parameters = requireRoot('parameters');
 
+//Start redis connection
+const redisConnection = requireRoot('app/fn/redisConnection');
+redisConnection.startClient();
 
 //Initialize web app
 const express = require('express');
@@ -24,7 +27,7 @@ app.listen(parameters.listenPort,function(){
     debug('listening',parameters.listenPort);
 });
 
-
+//Simple process log
 process.on('exit', function () {
     debug('exit');
 });

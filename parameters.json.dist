@@ -1,6 +1,13 @@
 {
     "listenPort": 3000,
+    "redisUrl": "redis://127.0.0.1:6379/0",
+    "sessionTTL" : 86400,
+    "cookie":{
+        "domain" : "localhost",
+        "secret" : "{random-string}"
+    },
     "_comment":{
-        "listenPort" : "Port used by main http app"
+        "listenPort" : "Port used by main http app",
+        "redisUrl" : "Redis connection url"
     }
 }

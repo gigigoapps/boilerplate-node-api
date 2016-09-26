@@ -1,3 +1,9 @@
 {
-    "listenPort": 3000
+    "listenPort": 3000,
+    "redisUrl": "redis://127.0.0.1:6379/8",
+    "sessionTTL": 86400,
+    "cookie": {
+        "domain": "localhost",
+        "secret": "{random-string}"
+    }
 }
