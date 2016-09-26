@@ -1,0 +1,30 @@
+{
+  "name": "gig-starter-node4-api",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "postinstall": "build-params",
+    "start": "node index.js",
+    "dev": "DEBUG=app* nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "build-params": "^0.1.13",
+    "cors": "^2.8.1",
+    "debug": "^2.2.0",
+    "express": "^4.14.0",
+    "express-deliver": "0.0.4",
+    "morgan": "^1.7.0",
+    "q": "^1.4.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2",
+    "nodemon": "^1.10.2",
+    "supertest": "^2.0.0"
+  }
+}

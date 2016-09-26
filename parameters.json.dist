@@ -1,0 +1,6 @@
+{
+    "listenPort": 3000,
+    "_comment":{
+        "listenPort" : "Port used by main http app"
+    }
+}
