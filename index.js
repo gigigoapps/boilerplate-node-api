@@ -11,6 +11,9 @@ const debug = require('debug')('app:root');
 debug('init');
 const parameters = requireRoot('parameters');
 
+//Start mongoose connection
+const mongooseConnection = requireRoot('app/fn/mongooseConnection');
+mongooseConnection.startClient();
 
 //Initialize web app
 const express = require('express');

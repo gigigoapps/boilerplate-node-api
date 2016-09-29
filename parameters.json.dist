@@ -1,6 +1,8 @@
 {
     "listenPort": 3000,
+    "mongoDBConnectionUri" : "mongodb://localhost/node-api",
     "_comment":{
-        "listenPort" : "Port used by main http app"
+        "listenPort" : "Port used by main http app",
+        "mongoDBConnectionUri" : "More info in https://docs.mongodb.com/manual/reference/connection-string/"
     }
 }

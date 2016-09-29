@@ -4,6 +4,8 @@ const morgan = require('morgan')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const expressDeliver = require('express-deliver')
+const exception = require('express-deliver').exception;
+const mongooseConnection = requireRoot('app/fn/mongooseConnection');
 
 const parameters = requireRoot('parameters');
 
@@ -28,6 +30,13 @@ module.exports = function(app){
 
     //Responses based on promises
 	app.use(expressDeliver)
+
+    //Throw error if no mongoose connection
+    app.use(function(req,res,next){
+        if (!mongooseConnection.connected)
+            throw exception.DatabaseError;
+        next();
+    });
 
     //Parses http body
     app.use(bodyParser.urlencoded({ extended: true }))

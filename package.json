@@ -18,6 +18,8 @@
     "debug": "^2.2.0",
     "express": "^4.14.0",
     "express-deliver": "0.0.4",
+    "lodash": "^4.16.2",
+    "mongoose": "^4.6.1",
     "morgan": "^1.7.0",
     "q": "^1.4.1"
   },
