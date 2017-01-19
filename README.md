@@ -1,4 +1,4 @@
-NODE 4 for APIs - Starter Kit
+NODE 6 for APIs - Starter Kit
 =======
 
 ####Branches available:

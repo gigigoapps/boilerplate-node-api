@@ -1,13 +1,14 @@
-'use strict';
+'use strict'
 
 const expressDeliver = require('express-deliver')
 const exception = expressDeliver.exception
-const parameters = requireRoot('parameters');
-const dataService = requireRoot('app/services/dataService');
+const parameters = requireRoot('parameters')
+const dataService = requireRoot('app/services/dataService')
 
 module.exports = expressDeliver.wrapper({
-    index(req,res){
-        return dataService.getList()
+    *index(req,res){
+        let list = yield dataService.getList()
+        return list
     },
     params(req,res){
         return {
@@ -18,6 +19,6 @@ module.exports = expressDeliver.wrapper({
     },
     error(req,res){
         //Defined in fn/customExceptions
-		throw exception.InvalidData
-	}
+        throw exception.InvalidData
+    }
 })

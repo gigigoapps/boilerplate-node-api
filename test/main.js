@@ -1,8 +1,8 @@
 /* jshint mocha:true */
 
-'use strict';
-var expect = require('chai').expect
-var request = require('supertest').agent('http://localhost:3000')
+'use strict'
+const expect = require('chai').expect
+const request = require('supertest').agent('http://localhost:3000')
 
 describe('Main',function(){
 
@@ -12,11 +12,11 @@ describe('Main',function(){
             .expect('Content-type',/json/)
             .expect(200)
             .end(function(err,res){
-                expect(err).to.be.null;
-                expect(res.body.status).to.be.true;
-                done();
-            });
-    });
+                expect(err).to.be.null
+                expect(res.body.status).to.be.true
+                done()
+            })
+    })
 
     it('should fail',function(done){
         request
@@ -24,10 +24,10 @@ describe('Main',function(){
             .expect('Content-type',/json/)
             .expect(400)
             .end(function(err,res){
-                expect(err).to.be.null;
-                expect(res.body.status).to.be.false;
-                done();
-            });
-    });
+                expect(err).to.be.null
+                expect(res.body.status).to.be.false
+                done()
+            })
+    })
 
-});
+})

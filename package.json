@@ -7,22 +7,27 @@
     "test": "mocha",
     "postinstall": "build-params",
     "start": "node index.js",
-    "dev": "DEBUG=app* nodemon index.js"
+    "dev": "DEBUG=app* nodemon index.js",
+    "lint": "eslint ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^3.4.7",
     "body-parser": "^1.15.2",
     "build-params": "^0.1.13",
+    "co": "^4.6.0",
     "cors": "^2.8.1",
     "debug": "^2.2.0",
     "express": "^4.14.0",
-    "express-deliver": "0.0.4",
+    "express-deliver": "0.0.9",
     "morgan": "^1.7.0",
     "q": "^1.4.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "eslint": "^3.13.1",
+    "eslint-config-gigigo-standard": "^0.1.9",
     "mocha": "^3.0.2",
     "nodemon": "^1.10.2",
     "supertest": "^2.0.0"

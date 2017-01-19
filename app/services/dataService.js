@@ -1,19 +1,19 @@
-'use strict';
+'use strict'
 
 const debug = require('debug')('app:services:data')
-const q = require('q');
+const Promise = require('bluebird')
 const utils = requireRoot('app/fn/utils')
 
 exports.getList = function(){
     debug('list','waiting 500 ms')
 
-    let defer = q.defer()
+    let defer = Promise.defer()
 
     setTimeout(()=>{
         debug('list','done')
-        let obj = utils.safeJSONParse('{"foo":"bar","bob":2}');
+        let obj = utils.safeJSONParse('{"foo":"bar","bob":2}')
         defer.resolve(obj)
     },500)
 
-    return defer.promise;
+    return defer.promise
 }
