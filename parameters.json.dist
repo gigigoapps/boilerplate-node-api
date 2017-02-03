@@ -1,5 +1,9 @@
 {
     "listenPort": 3000,
+    "jwt":{
+        "secret":"__secretkey__",
+        "expireTime": 86400
+    },
     "_comment":{
         "listenPort" : "Port used by main http app"
     }

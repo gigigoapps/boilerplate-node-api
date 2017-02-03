@@ -32,5 +32,7 @@ module.exports = function(app){
     //Parses http body
     app.use(bodyParser.urlencoded({ extended: true }))
     app.use(bodyParser.json())
+
+    require('./passportConfig.js')
     
 }

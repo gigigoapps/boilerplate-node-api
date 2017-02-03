@@ -8,3 +8,10 @@ exception.InvalidData = class InvalidData extends exception.BaseException{
         this.statusCode = 400
     }
 }
+
+exception.Unauthorized = class Unauthorized extends exception.BaseException{
+    constructor(data){
+        super(2002,'Unauthorized',data)
+        this.statusCode = 401
+    }
+}
