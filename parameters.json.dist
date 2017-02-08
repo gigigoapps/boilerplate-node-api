@@ -1,6 +1,8 @@
 {
     "listenPort": 3000,
+    "sequelizeDBConnectionUri" : "mysql://localhost:3306/databaseName",
     "_comment":{
-        "listenPort" : "Port used by main http app"
-    }
+        "listenPort" : "Port used by main http app",
+        "sequelizeDBConnectionUri" : "More info in http://sequelize.readthedocs.io/en/latest/api/sequelize/"
+    } 
 }

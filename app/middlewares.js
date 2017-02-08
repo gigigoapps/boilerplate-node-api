@@ -1,11 +1,12 @@
 'use strict'
 
+// const debug = require('debug')('app:middlewares')
 const morgan = require('morgan')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const expressDeliver = require('express-deliver')
-
-const parameters = requireRoot('parameters')
+const exception = require('express-deliver').exception
+const sequelizeConnection = requireRoot('app/fn/sequelizeConnection')
 
 //Load custom exception
 requireRoot('app/fn/customExceptions')
@@ -28,6 +29,13 @@ module.exports = function(app){
 
     //Responses based on promises
     app.use(expressDeliver)
+
+    //Throw error if no mongoose connection
+    app.use(function(req,res,next){
+        if (!sequelizeConnection.connected)
+            throw exception.DatabaseError
+        next()
+    })
 
     //Parses http body
     app.use(bodyParser.urlencoded({ extended: true }))

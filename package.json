@@ -22,7 +22,9 @@
     "express": "^4.14.0",
     "express-deliver": "0.0.9",
     "morgan": "^1.7.0",
-    "q": "^1.4.1"
+    "mysql": "^2.13.0",
+    "q": "^1.4.1",
+    "sequelize": "^3.30.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
